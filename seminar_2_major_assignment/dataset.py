@@ -18,11 +18,11 @@ def main(
 
     df = pd.read_csv(input_path)
 
-    if "unnecessary_column" in df.columns:
-        df = df.drop(columns=["unnecessary_column"])
+    if "Shape_Length" in df.columns:
+        df = df.drop(columns=["Shape_Length"])
 
-    if "old_name" in df.columns:
-        df = df.rename(columns={"old_name": "new_name"})
+    if "education_b15003_001e" in df.columns:
+        df = df.rename(columns={"education_b15003_001e": "total_education"})
 
     if "achievement_percentage" in df.columns:
         df = df[df["achievement_percentage"] > 0]
