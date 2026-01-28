@@ -96,3 +96,29 @@ export PRINT_HELP_PYSCRIPT
 
 help:
 	@$(PYTHON_INTERPRETER) -c "${PRINT_HELP_PYSCRIPT}" < $(MAKEFILE_LIST)
+
+## Upload Data to storage system
+.PHONY: sync_data_up
+sync_data_up:
+\tgsutil -m rsync -r data/ gs://user-bucket-badereli-bc-edu-lsehd-datascience-buckets/data/
+
+## Download Data from storage system
+.PHONY: sync_data_down
+sync_data_down:
+\tgsutil -m rsync -r gs://user-bucket-badereli-bc-edu-lsehd-datascience-buckets/data/ data/
+.PHONY: sync_data_up
+sync_data_up:
+\tgsutil -m rsync -r data/ gs://user-bucket-badereli-bc-edu-lsehd-datascience-buckets/data/
+.PHONY: sync_data_down
+sync_data_down:
+\tgsutil -m rsync -r gs://user-bucket-badereli-bc-edu-lsehd-datascience-buckets/data/ data/
+
+## Upload Data to storage system
+.PHONY: sync_data_up
+sync_data_up:
+	gsutil -m rsync -r data/ gs://user-bucket-badereli-bc-edu-lsehd-datascience-buckets/data/
+
+## Download Data from storage system
+.PHONY: sync_data_down
+sync_data_down:
+	gsutil -m rsync -r gs://user-bucket-badereli-bc-edu-lsehd-datascience-buckets/data/ data/
