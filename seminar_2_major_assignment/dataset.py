@@ -4,9 +4,11 @@ from tqdm import tqdm
 import typer
 import pandas as pd
 
-from seminar_2_major_assignment.config import PROCESSED_DATA_DIR, RAW_DATA_DIR
+from seminar_2_major_assignment.config import PROCESSED_DATA_DIR, 
+RAW_DATA_DIR
 
 app = typer.Typer()
+
 
 @app.command()
 def main(
@@ -17,11 +19,12 @@ def main(
 
     df = pd.read_csv(input_path)
 
-    if "unnecessary_column" in df.columns:
-        df = df.drop(columns=["unnecessary_column"])
+    if "Shape_Length" in df.columns:
+        df = df.drop(columns=["Shape_Length"])
 
-    if "old_name" in df.columns:
-        df = df.rename(columns={"old_name": "new_name"})
+    if "education_b15003_001e" in df.columns:
+        df = df.rename(columns={"education_b15003_001e": 
+"total_education"})
 
     if "achievement_percentage" in df.columns:
         df = df[df["achievement_percentage"] > 0]
@@ -30,6 +33,7 @@ def main(
     df.to_csv(output_path, index=False)
 
     logger.success(f"Processed dataset saved to {output_path}")
+
 
 if __name__ == "__main__":
     app()
