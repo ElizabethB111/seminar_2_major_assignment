@@ -1,0 +1,8 @@
+
+For the analysis step, I created a Jupyter notebook called seminar_2_major_assignment/modeling/early_eda.ipynb
+
+I created an identical notebook called notebooks/simple_analysis.ipynb in case I stored it in the wrong place.
+
+In this notebook, I loaded the processed dataset and performed simple exploratory analysis by calculating the mean of the education_b15003_lt9th column and looking at describe stats.
+
+

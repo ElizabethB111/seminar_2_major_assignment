@@ -1,0 +1,5 @@
+Next steps:
+
+- Perform further EDA on education variables
+- Create visualizations comparing neighborhoods
+- Train and evaluate a simple regression model
